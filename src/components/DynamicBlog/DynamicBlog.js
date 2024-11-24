@@ -70,7 +70,7 @@ export default DynamicBlogComponent;
 const ContactUsForm = () => {
     return (
         <div>
-            <h5>Contact RH Construction USA Inc.</h5>
+            <h5>Contact Rain Coupon</h5>
             <div className="sm:col-span-3">
                 <div className="mt-2">
                     <input

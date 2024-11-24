@@ -3,7 +3,7 @@ import React from "react";
 const Contact = () => {
   return (
     <div className="lg:w-[80%]">
-      <h5>Contact Prime Ready Mix </h5>
+      <h5>Contact Rain Coupon </h5>
       <div className="sm:col-span-3">
         <div className="mt-2">
           <input

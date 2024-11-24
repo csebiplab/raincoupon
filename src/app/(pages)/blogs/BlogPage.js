@@ -3,7 +3,6 @@ import { FiPhoneCall } from 'react-icons/fi';
 import './blog.css'
 import Blogs from './Blogs';
 import Contact from '../../../components/common/Contact';
-import NoDataFound from "@/components/__dashboard/shared/NoDataFound";
 
 async function getData() {
     const res = await fetch(process.env.NEXT_PUBLIC_API_URL + '/api/blogContent', { cache: 'no-store' })
@@ -22,8 +21,7 @@ const BlogPage = async () => {
                 <div className='flex justify-center mt-12'>
                     <section className='grid sm:grid-cols-1 lg:grid-cols-2 place-items-center w-full sm:w-[80%] p-4'>
                         <div className='text-4xl font-semibold'>
-                            <p>RH Construction</p>
-                            <p>USA INC.</p>
+                            <p>Rain Coupon</p>
                         </div>
                         <div>
                             <p>
@@ -50,7 +48,7 @@ const BlogPage = async () => {
                                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-16 py-6 bg-white'>
                                     {blogs?.map(item => <Blogs key={item._id} item={item} />)}
                                 </div>
-                                : <NoDataFound />
+                                : <p>No Blogs Found</p>
                         }
 
                     </>
