@@ -5,14 +5,16 @@ import Blogs from './Blogs';
 import Contact from '../../../components/common/Contact';
 
 async function getData() {
-    const res = await fetch(process.env.NEXT_PUBLIC_API_URL + '/api/blogContent', { cache: 'no-store' })
+    const url = process.env.NEXT_PUBLIC_API_URL + '/api/blogs?projectFor=RainCoupon'
+
+    const res = await fetch(url, { cache: 'no-store' })
     const data = await res.json()
-    return data;
+    return data?.data
 }
 
 const BlogPage = async () => {
     const data = await getData()
-    const blogs = data?.data;
+    const blogs = data;
 
 
     return (

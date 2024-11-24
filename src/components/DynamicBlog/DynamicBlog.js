@@ -11,7 +11,7 @@ const DynamicBlogComponent = ({ blog }) => {
     const parsedContent = useMemo(() => {
         if (typeof window !== 'undefined') {
             const parser = new DOMParser();
-            return parser.parseFromString(blog.content, 'text/html');
+            return parser?.parseFromString(blog.content, 'text/html');
         }
         return null;
     }, [blog]);
@@ -21,11 +21,11 @@ const DynamicBlogComponent = ({ blog }) => {
     useEffect(() => {
         if (parsedContent) {
             const imgElement = parsedContent?.querySelector('img');
-            const imgSrc = imgElement ? imgElement.getAttribute('src') : null;
-            const imgAltTxt = imgElement ? imgElement.getAttribute('alt') : null;
+            const imgSrc = imgElement ? imgElement?.getAttribute('src') : null;
+            const imgAltTxt = imgElement ? imgElement?.getAttribute('alt') : null;
             setImg(imgSrc);
             setImgAlt(imgAltTxt);
-            const filteredContent = blog?.content.replace(/<img[^>]*>/, "");
+            const filteredContent = blog?.content?.replace(/<img[^>]*>/, "");
 
             setBlogDetails(filteredContent);
         }
@@ -47,14 +47,20 @@ const DynamicBlogComponent = ({ blog }) => {
                                 {img && <img className='h-full w-full rounded-md' src={img} alt={imgAlt || "Blog Image"} />}
                             </div>
                         </div>
-                        <div className='flex flex-col-reverse md:flex-row mt-8 gap-8 w-11/12 md:w-10/12 mx-auto'>
-                            <div className='w-full inline-tag-bg-none' dangerouslySetInnerHTML={{ __html: blogDetails }} />
-                            <div className='w-full lg:w-3/4 relative'>
-                                <div className='w-full mt-12 md:sticky top-32 right-0'>
+                        <div className="flex flex-col-reverse lg:flex-row mt-8 gap-8 w-11/12 md:w-10/12 mx-auto">
+                            {/* Blog Content */}
+                            <div className="w-full lg:w-8/12">
+                                <div dangerouslySetInnerHTML={{ __html: blogDetails }} />
+                            </div>
+
+                            {/* Contact Form */}
+                            <div className="w-full lg:w-4/12 relative bg-gray-50 p-6 shadow-md rounded-md">
+                                <div className="sticky top-32">
                                     <ContactUsForm />
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </Suspense>
             }
