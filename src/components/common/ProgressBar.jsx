@@ -1,0 +1,12 @@
+"use client"
+import { AppProgressBar } from 'next-nprogress-bar';
+export default function ProgressBar() {
+    return (
+        <AppProgressBar
+            height="4px"
+            color="#fbc024"
+            options={{ showSpinner: true,easing:'ease',speed:500 }}
+            shallowRouting
+      />
+    )
+}

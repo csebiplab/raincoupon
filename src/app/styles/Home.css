@@ -1,0 +1,28 @@
+/* .consideringPlan__arrea {
+ 
+} */
+
+/* .swiper-button-prev,
+.swiper-button-next {
+  color: #555555 !important;
+} */
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  font-size: 15px;
+}
+/* .swiper-button-prev:after,
+.swiper-rtl .swiper-button-next:after {
+  content: "prev";
+  position: absolute;
+  left: -10px;
+} */
+/* .swiper-button-next:after,
+.swiper-rtl .swiper-button-prev:after {
+  content: "next";
+  position: absolute;
+  right: -10px;
+} */
+.content-areea {
+  padding-bottom: 20px;
+}

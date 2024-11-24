@@ -1,0 +1,191 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-scrollbar {
+  width: 8px;
+  background: #00000020;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #00000080;
+}
+
+body{
+  background: #FFFCFC;
+}
+
+.pswp__img {
+  object-fit: contain;
+}
+.ql-video {
+  width: 100%;
+  aspect-ratio: 16/9;
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-semibold;
+  }
+  h1 {
+    @apply text-4xl uppercase;
+  }
+  h2 {
+    @apply text-3xl;
+  }
+  h3 {
+    @apply text-2xl;
+  }
+  h4 {
+    @apply text-xl;
+  }
+  h5 {
+    @apply text-lg;
+  }
+}
+
+img {
+  @apply select-none;
+}
+
+@layer utilities {
+  .container {
+    @apply max-w-screen-5xl px-3 md:px-5 lg:px-10 xl:px-20 2xl:px-28 3xl:px-40 4xl:px-52 5xl:px-[285px] mx-auto;
+  }
+  .full__section_r_p {
+    @apply max-w-screen-5xl pr-3 md:pr-8 lg:pr-24 xl:pr-28 2xl:pr-32 3xl:pr-40 4xl:pr-52 5xl:pr-[285px] mx-auto;
+  }
+
+  .full__section_l_p {
+    @apply max-w-screen-5xl pl-3 md:pl-8 lg:pl-24 xl:pl-28 2xl:pl-32 3xl:pl-40 4xl:pl-52 5xl:pl-[285px] mx-auto;
+  }
+
+  .common__padding__top {
+    @apply pt-14 lg:pt-[70px] xl:pt-[80px] 2xl:pt-[90px] 3xl:pt-[100px] 4xl:pt-[110px] 5xl:pt-[120px];
+  }
+
+  .container-fluid {
+    @apply w-full px-4 mx-auto;
+  }
+}
+.swiper-button-prev,
+.swiper-button-next {
+  font-weight: bolder;
+}
+
+@layer components {
+  /*
+  FOOTER CLASSES
+  */
+
+  .footer-link {
+    @apply flex gap-2 mb-2 text-lg;
+  }
+}
+
+/* Animated gallery (This design could be change) */
+.sample-slider {
+  /* width: 70%; */
+}
+.sample-slider img {
+  width: 100%;
+}
+.sample-slider .swiper-wrapper {
+  transition-timing-function: linear;
+}
+
+@media only screen and (min-width: 1920px) {
+  .custom-container {
+    max-width: 1920px;
+    margin: 0 auto;
+  }
+}
+
+.band-card {
+  margin: 0 auto;
+}
+
+.band {
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.25);
+}
+
+.rating {
+  box-shadow: 0px 0px 4px 0px #00000080;
+}
+.my-class {
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.5);
+}
+
+/* Hero section */
+.hero-section {
+  width: 100%;
+  height: auto;
+  background-image: url("/assets/images/bg.jpeg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.hero-right {
+  width: 42%;
+}
+
+.hero-right .hero-main-image {
+  width: 100%;
+  object-fit: cover;
+}
+
+.section-bg {
+  background-color: #ffb7031a;
+}
+.card-sd {
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.25);
+}
+
+.yellow-border {
+  border-radius: 15px;
+  border: 9px solid #ffb703;
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.5);
+}
+
+.trust-p {
+  color: #000;
+  font-family: "Roboto Slab";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px; /* 200% */
+}
+
+@media screen and (min-width: 960px) and (max-width: 1200px) {
+  .brand p {
+    font-size: 12px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  .brand {
+    height: auto;
+  }
+}
+
+/* bathroom renovation bg color  */
+.bg___color {
+  background: #FFFDF8;
+}
+
+.image:hover {
+  filter: invert(98%) sepia(79%) saturate(2476%) hue-rotate(330deg)
+    brightness(95%) contrast(95%);
+}
+
+/* Custom hover effect */
+.Images:hover {
+  filter: invert(88%) sepia(92%) saturate(7332%) hue-rotate(355deg)
+    brightness(80%) contrast(110%);
+}
