@@ -8,28 +8,18 @@ const DynamicBlogComponent = ({ blog }) => {
     const [imgAlt, setImgAlt] = useState("");
     const [blogDetails, setBlogDetails] = useState("");
 
-    const parsedContent = useMemo(() => {
-        if (typeof window !== 'undefined') {
-            const parser = new DOMParser();
-            return parser?.parseFromString(blog.content, 'text/html');
-        }
-        return null;
+    useEffect(() => {
+        const parser = new DOMParser();
+        const parsedContent = parser.parseFromString(blog?.content || '', 'text/html');
+
+        const imgElement = parsedContent.querySelector('img');
+        setImg(imgElement?.getAttribute('src') || '');
+        setImgAlt(imgElement?.getAttribute('alt') || '');
+
+        const filteredContent = blog?.content.replace(/<img[^>]*>/, '');
+        setBlogDetails(filteredContent);
     }, [blog]);
 
-
-
-    useEffect(() => {
-        if (parsedContent) {
-            const imgElement = parsedContent?.querySelector('img');
-            const imgSrc = imgElement ? imgElement?.getAttribute('src') : null;
-            const imgAltTxt = imgElement ? imgElement?.getAttribute('alt') : null;
-            setImg(imgSrc);
-            setImgAlt(imgAltTxt);
-            const filteredContent = blog?.content?.replace(/<img[^>]*>/, "");
-
-            setBlogDetails(filteredContent);
-        }
-    }, [parsedContent]);
 
     return (
         <>
