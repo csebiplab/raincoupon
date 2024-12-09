@@ -11,6 +11,29 @@ async function getData({ params }) {
 }
 
 
+export async function generateMetadata({ params }) {
+    const data = await getData({ params })
+
+    try {
+        const { metaTitle: title, metaDescription: description, metaKeywords: keywords } = data ?? {};
+        return {
+            title: title || "Rain Coupon Blog",
+            description: description || "Rain Coupon Blog",
+            keywords: keywords || "Rain Coupon Blog",
+            openGraph: {
+                title: title,
+                description: description,
+            },
+        };
+    } catch (error) {
+        return {
+            title: "Rain Coupon Blog",
+            keywords: "Rain Coupon Blog",
+            description: "Rain Coupon Blog",
+        };
+    }
+}
+
 
 const page = async ({ params }) => {
     const data = await getData({ params })
